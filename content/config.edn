@@ -1,6 +1,6 @@
-{:site-title           "My Awesome Blog"
- :author               "Bob Bobbert"
- :description          "This blog is awesome"
+{:site-title           "Replware"
+ :author               "Laurence Chen"
+ :description          "Complex web and cloud systems development and consulting. All functional. Clojure, ClojureScript, Datomic."
  :site-url             "http://blogawesome.com/"
  :post-root            "posts"
  :page-root            "pages"
@@ -18,7 +18,7 @@
  :sass-src             []
  :sass-path            "sass"
  :compass-path         "compass"
- :theme                "blue"
+ :theme                "replware"
  :resources            ["img" "CNAME"]
  :keep-files           [".git"]
  :disqus?              false

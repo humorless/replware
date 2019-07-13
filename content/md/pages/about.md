@@ -3,6 +3,5 @@
  :page-index 0
  :navbar? true}
 
-## Write something about something
 
-wow wow wow
+We are from Clojure community Taiwan. The best way we can do to introduce Clojure to this island is to provide Clojure service to customers. One of our mission is let people understand the goodness of Clojure.
