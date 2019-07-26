@@ -1,5 +1,5 @@
 {:site-title           "Replware"
- :author               "Laurence Chen"
+ :author               "replware.dev"
  :description          "Complex web and cloud systems development and consulting. All functional. Clojure, ClojureScript, Datomic."
  :site-url             "https://replware.dev"
  :post-root            "posts"
