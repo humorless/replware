@@ -23,6 +23,7 @@
   "This will render the html body"
   [data]
   [:body
+    [:div [:img {:src "/assets/images/logo.png"}]]
     [:main
       (-> data :entry :content)]])
 
