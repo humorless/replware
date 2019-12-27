@@ -12,7 +12,7 @@
      :name "viewport"}]
    [:link
     {:rel "shortcut icon"
-     :href "/assets/images/favicon.ico"
+     :href "/assets/logo/favicon.ico"
      :type "image/x-icon"}]
    [:link
     {:rel "stylesheet"
@@ -41,9 +41,9 @@
   [:header.bg-dark-gray.pv1.pv2-ns.lh-copy.flex.justify-between.items-center
    [:a.ml4.db.db-ns.mw5.link
     {:href "/" :title "home"}
-    [:img.mh2.mv2 {:src "/assets/images/logo.png"}]]
+    [:img.mh2.mv2 {:src "/assets/logo/logo_transparent_background.png"}]]
    [:h1.pr5.pv4.white
-    [:div "bring " [:span.yellow "your ideas"]]
+    [:div "turn " [:span.yellow "your ideas"]]
     [:div "into " [:span.light-blue.center "software"]]]])
 
 (defn- create-main
