@@ -3,7 +3,7 @@
 
 
 (defn- create-head
- "This will render the <head>"
+ "This will render html <head>"
  [title]
  [:head
    [:title title]
@@ -19,13 +19,50 @@
     {:rel "stylesheet",
      :href "https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"}]])
 
+(defn- create-nav
+  "render the <nav>"
+  []
+  [:nav.bg-white.relative.flex.justify-between.items-center
+    {:role "navigation"}
+    [:a.db.db-ns.mw4.link
+      {:href "/" :title "home"}
+      [:img.mh2.mv2 {:src "/assets/images/logo.png"}]]
+    [:ul.list.mv0.pr2.tr.flex-auto
+      [:li.di.mr3
+        [:a.link.dark-gray.hover-orange
+          {:href "/"} "Home"]]
+      [:li.di.mr3
+        [:a.link.dark-gray.hover-orange
+          {:href "/blog"} "Blog"]]
+      [:li.di.mr3
+        [:a.link.dark-gray.hover-orange
+          {:href "/about"} "About"]]]])
+
+(defn- create-header
+  "render the <header>"
+  []
+  [:header])
+
+(defn- create-main
+  "render the <main>"
+  [content]
+  [:main
+    content])
+
+(defn- create-footer
+  "render the <footer>"
+  []
+  [:footer])
+
 (defn- create-body
-  "This will render the html body"
+  "This will render html <body>"
   [data]
-  [:body
-    [:div [:img {:src "/assets/images/logo.png"}]]
-    [:main
-      (-> data :entry :content)]])
+  [:body.helvetica.dark-gray
+    (create-nav)
+    (create-header)
+    (create-main
+      (-> data :entry :content) )
+    (create-footer)])
 
 (defn page
   "the page renderer"
