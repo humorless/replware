@@ -48,9 +48,24 @@
 
 (defn- create-main
   "render the <main>"
-  [content]
-  [:main
-   content])
+  [content data]
+  [:main.w-100.mw8.center.ph3.pv4
+   [:section
+    [:h2 "Who"]
+    [:img.mw5.relative.fr {:src "/assets/images/photo.jpg"}]
+    content]
+   [:section
+    [:h2 "Services"]
+    [:ul
+     [:li "Rapid prototyping and MVP"]
+     [:li "Enterprise software solution"]
+     [:li "Datomic database"]]]
+   [:section
+    [:h2 "Talks"]
+    [:ul
+     (for [t (-> data :entry :talk)]
+       [:li t])]]])
+
 
 (defn- create-footer
   "render the <footer>"
@@ -64,7 +79,8 @@
    (create-nav)
    (create-header)
    (create-main
-    (-> data :entry :content))
+    (-> data :entry :content)
+    data)
    (create-footer)])
 
 (defn page
