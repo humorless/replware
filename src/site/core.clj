@@ -35,11 +35,11 @@
 (defn- create-header
   "render the <header>"
   []
-  [:header.bg-dark-gray.pv1.pv2-ns.lh-copy-ns.flex.justify-between.items-center
+  [:header.bg-dark-gray.pv1.pv2-ns.lh-copy-ns.flex-column.flex-row-ns.flex-ns.justify-between.items-center
    [:a.ml4-ns.db.db-ns.mw4.mw5-ns.link
     {:href "/" :title "home"}
-    [:img.mh2.mv2 {:src "/assets/logo/logo_transparent_background.png"}]]
-   [:h1.pr4.pr5-ns.pv4-ns.white
+    [:img.mh4.mh2-ns.mt2 {:src "/assets/logo/logo_transparent_background.png"}]]
+   [:h1.ph4.pv2.ph5-ns.pv4-ns.white
     [:div "turn " [:span.yellow "your ideas"]]
     [:div "into " [:span.light-blue.center "software"]]]])
 
