@@ -21,19 +21,16 @@
 (defn- create-nav
   "render the <nav>"
   []
-  [:nav.bg-white.relative.flex.justify-between.items-center
+  [:nav.bg-white.flex.justify-between.items-center
    {:role "navigation"}
    [:div.db.db-ns.h3]
-   [:ul.list.mv0.pr2.tr.flex-auto
+   [:ul.list.mv0.pr5.tr.flex-auto
     [:li.di.mr3
      [:a.link.dark-gray.hover-red
       {:href "/"} "Home"]]
     [:li.di.mr3
      [:a.link.dark-gray.hover-red
-      {:href "/blog"} "Blog"]]
-    [:li.di.mr3
-     [:a.link.dark-gray.hover-red
-      {:href "/about"} "About"]]]])
+      {:href "https://humorless.github.io"} "Blog"]]]])
 
 (defn- create-header
   "render the <header>"
@@ -46,26 +43,38 @@
     [:div "turn " [:span.yellow "your ideas"]]
     [:div "into " [:span.light-blue.center "software"]]]])
 
+(defn ->content-by-tag
+  "select by tag"
+  [t data]
+  (->> data
+       (filter t)
+       (map :content)
+       first))
+
 (defn- create-main
   "render the <main>"
-  [content data]
-  [:main.w-100.mw8.center.ph3.pv4
-   [:section
-    [:h2 "Who"]
-    [:img.mw5.relative.fr {:src "/assets/images/photo.jpg"}]
-    content]
-   [:section
-    [:h2 "Services"]
-    [:ul
-     [:li "Rapid prototyping and MVP"]
-     [:li "Enterprise software solution"]
-     [:li "Datomic database"]]]
-   [:section
-    [:h2 "Talks"]
-    [:ul
-     (for [t (-> data :entry :talk)]
-       [:li t])]]])
-
+  [entries]
+  (let [who (->content-by-tag :who entries)
+        talk (->content-by-tag :talk entries)
+        contact (->content-by-tag :contact entries)]
+    (prn who talk contact)
+    [:main.w-100.mw8.center.ph3.pv4
+     [:section
+      [:h2 "who"]
+      [:img.mw5.relative.fr {:src "/assets/images/photo.jpg"}]
+      who]
+     [:section
+      [:h2 "services"]
+      [:ul
+       [:li "Rapid prototyping and MVP"]
+       [:li "Enterprise software solution"]
+       [:li "Datomic database"]]]
+     [:section
+      [:h2 "talks"]
+      talk]
+     [:section
+      [:h2 "contact"]
+      contact]]))
 
 (defn- create-footer
   "render the <footer>"
@@ -74,19 +83,17 @@
 
 (defn- create-body
   "This will render html <body>"
-  [data]
+  [entries]
   [:body.helvetica.dark-gray
    (create-nav)
    (create-header)
-   (create-main
-    (-> data :entry :content)
-    data)
+   (create-main entries)
    (create-footer)])
 
-(defn page
+(defn home-page
   "the page renderer"
-  [data]
+  [{global-meta :meta entries :entries}]
   (hp/html5
    {:lang "en"}
    (create-head "replware")
-   (create-body data)))
+   (create-body entries)))

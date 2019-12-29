@@ -18,7 +18,7 @@
          '[pandeiro.boot-http :refer [serve]]
          '[deraen.boot-sass :refer [sass]])
 
-(def page? (comp #(= % true) :page))
+(def home? (comp #(= % true) :home))
 
 (deftask
   build
@@ -26,8 +26,10 @@
   []
   (comp (global-metadata)
         (markdown)
-        (render :renderer 'site.core/page
-                :filterer page?)
+        (collection :renderer 'site.core/home-page
+                    :filterer home?
+                    :sortby :path
+                    :page "index.html")
         (sass)))
 
 (deftask build-prod "Emit HTML files" [] (comp (build) (target)))
