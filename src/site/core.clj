@@ -61,7 +61,7 @@
     [:main.w-100.mw8.center.ph3.pv4
      [:section
       [:h2 "who"]
-      [:img.mw4.mw5-ns.relative.fr {:src "/assets/images/photo.jpg"}]
+      [:img.br-100.mw4.mw5-ns.relative.fr {:src "/assets/images/photo.jpg"}]
       who]
      [:section
       [:h2 "services"]
