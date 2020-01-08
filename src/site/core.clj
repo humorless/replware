@@ -56,8 +56,9 @@
   [entries]
   (let [who (->content-by-tag :who entries)
         talk (->content-by-tag :talk entries)
+        testimonial (->content-by-tag :testimonial entries)
         contact (->content-by-tag :contact entries)]
-    (prn who talk contact)
+    (prn who talk contact testimonial)
     [:main.w-100.mw8.center.ph3.pv4
      [:section
       [:h2 "who"]
@@ -72,6 +73,9 @@
      [:section
       [:h2 "talks"]
       talk]
+     [:section
+      [:h2 "customer testimonials"]
+      testimonial]
      [:section
       [:h2 "contact"]
       contact]]))
