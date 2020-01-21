@@ -16,7 +16,18 @@
      :type "image/x-icon"}]
    [:link
     {:rel "stylesheet"
-     :href "https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"}]])
+     :href "https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"}]
+   [:script
+    {:src "https://www.googletagmanager.com/gtag/js?id=UA-135441027-2"}]
+   [:script
+    {:type "text/javascript"}
+    "
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135441027-2');
+    "]])
 
 (defn- create-nav
   "render the <nav>"
