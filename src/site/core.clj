@@ -80,6 +80,7 @@
       [:ul
        [:li "Rapid prototyping and MVP"]
        [:li "Enterprise software solution"]
+       [:li "Coach for improving the overall performance of the software team"]
        [:li "Datomic database"]]]
      [:section
       [:h2 "talks"]
