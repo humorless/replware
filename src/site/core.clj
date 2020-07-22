@@ -41,6 +41,9 @@
       {:href "/"} "Home"]]
     [:li.di.mr3
      [:a.link.dark-gray.hover-red
+      {:href "/assets/pdf/REPLWARE-case-studies.pdf"} "Client Results"]]
+    [:li.di.mr3
+     [:a.link.dark-gray.hover-red
       {:href "https://humorless.github.io"} "Blog"]]]])
 
 (defn- create-header
