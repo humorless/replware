@@ -110,7 +110,10 @@
        {:href "https://linkedin.com/in/humorless"} "Linkedin"]]
      [:li.f5.di.mr3
       [:a.link.dark-gray.hover-red
-       {:href "https://github.com/humorless"} "Github"]]]]])
+       {:href "https://github.com/humorless"} "Github"]]
+     [:li.f5.di.mr3
+      [:a.link.dark-gray.hover-red
+       {:href "https://www.slideshare.net/humorless/presentations"} "Slideshare"]]]]])
 
 (defn- create-body
   "This will render html <body>"
