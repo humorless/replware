@@ -1,7 +1,7 @@
 (set-env! :source-paths #{"src" "content"}
           :resource-paths #{"resources"}
           :dependencies '[[org.clojure/clojure "1.9.0"] ;
-                          [perun "0.4.2-SNAPSHOT" :scope "test"] ;
+                          [perun "0.4.3-SNAPSHOT" :scope "test"] ;
                           [hiccup "2.0.0-alpha1"] ;
                           [enlive "1.1.6"] ;
                           [boot-fmt/boot-fmt "0.1.8"] ;
@@ -11,7 +11,7 @@
                           [deraen/boot-sass "0.3.1"] ;
                          ])
 
-(require '[io.perun :refer :all]
+(require '[io.perun :as perun]
          '[site.core]
          '[clojure.string :as str]
          '[boot-fmt.core :refer [fmt]]
@@ -24,9 +24,9 @@
   build
   "Base task, you probably want to use `build-prod` or `dev`."
   []
-  (comp (global-metadata)
-        (markdown)
-        (collection :renderer 'site.core/home-page
+  (comp (perun/global-metadata)
+        (perun/markdown)
+        (perun/collection :renderer 'site.core/home-page
                     :filterer home?
                     :sortby :path
                     :page "index.html")
