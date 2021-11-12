@@ -54,8 +54,8 @@
     {:href "/" :title "home"}
     [:img.mh4.mh2-ns.mt2 {:src "/assets/logo/logo_transparent_background.png"}]]
    [:h1.ph4.pv2.ph5-ns.pv4-ns.white
-    [:div "turn " [:span.yellow "your ideas"]]
-    [:div "into " [:span.light-blue.center "software"]]]])
+    [:div "turn " [:span.yellow "technology"]]
+    [:div "into " [:span.light-blue.center "the edge"]]]])
 
 (defn ->content-by-tag
   "select by tag"
@@ -81,10 +81,9 @@
      [:section
       [:h2 "services"]
       [:ul
-       [:li "Rapid prototyping and MVP"]
-       [:li "Enterprise software solution"]
-       [:li "Coach for improving the overall performance of the software team"]
-       [:li "Datomic database"]]]
+       [:li "Developer productivity"]
+       [:li "Effective debugging"]
+       [:li "Data analytic stack"]]]
      [:section
       [:h2 "talks"]
       talk]
