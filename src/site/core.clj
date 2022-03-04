@@ -81,9 +81,11 @@
      [:section
       [:h2 "services"]
       [:ul
+       [:li "Data analytic stack"]
        [:li "Developer productivity"]
        [:li "Effective debugging"]
-       [:li "Data analytic stack"]]]
+       [:li "Business strategy formulation"]
+       ]]
      [:section
       [:h2 "talks"]
       talk]
