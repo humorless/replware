@@ -9,7 +9,7 @@
                           [pandeiro/boot-http "0.8.3"] ;
                           [boot-deps "0.1.9"] ;
                           [deraen/boot-sass "0.3.1"] ;
-                         ])
+                          ])
 
 (require '[io.perun :as perun]
          '[site.core]
@@ -26,16 +26,18 @@
   []
   (comp (perun/global-metadata)
         (perun/markdown)
+        (perun/static :renderer 'site.core/client-page
+                      :page "client.html")
         (perun/collection :renderer 'site.core/home-page
-                    :filterer home?
-                    :sortby :path
-                    :page "index.html")
+                          :filterer home?
+                          :sortby :path
+                          :page "index.html")
         (sass)))
 
 (deftask build-prod "Emit HTML files" [] (comp (build) (target)))
 
 (deftask dev
-         "Serve the site and watch the filesystem for changes."
-         []
-         (comp (watch) (build) (serve :resource-root "public")))
+  "Serve the site and watch the filesystem for changes."
+  []
+  (comp (watch) (build) (serve :resource-root "public")))
 

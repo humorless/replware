@@ -41,10 +41,10 @@
       {:href "/"} "Home"]]
     [:li.di.mr3
      [:a.link.dark-gray.hover-red
-      {:href "/assets/pdf/REPLWARE-case-studies-v2.pdf"} "Client Results"]]
+      {:href "/client.html"} "Case Studies"]]
     [:li.di.mr3
      [:a.link.dark-gray.hover-red
-      {:href "https://humorless.github.io"} "Blog"]]]])
+      {:href "https://replware.medium.com/"} "Blog"]]]])
 
 (defn- create-header
   "render the <header>"
@@ -65,7 +65,7 @@
        (map :content)
        first))
 
-(defn- create-main
+(defn- create-home-main
   "render the <main>"
   [entries]
   (let [who (->content-by-tag :who entries)
@@ -84,8 +84,7 @@
        [:li "Data analytic stack"]
        [:li "Developer productivity"]
        [:li "Effective debugging"]
-       [:li "Business strategy formulation"]
-       ]]
+       [:li "Business strategy formulation"]]]
      [:section
       [:h2 "talks"]
       talk]
@@ -95,6 +94,29 @@
      [:section
       [:h2 "contact"]
       contact]]))
+
+(defn- create-client-main
+  []
+  [:main.w-100.mw8.center.ph3.pv4
+   [:section
+    [:h2 "Data analytic stack"]
+    [:p "I helped my client to change the workflow in their business intelligence team, used ELT to replace ETL."
+     " With the new workflow, the business intelligence team reduces the data latency by 80%."]]
+   [:section
+    [:h2 "Developer productivity"]
+    [:p "I helped my client to introduce Clojure programming language as their new technical stack and gave their software team necessary training."
+     " With the technical stack, the software team can deliver 3 times faster."]]
+   [:section
+    [:h2 "Debug"]
+    [:p "I helped my client to find out the obstacles in their customer support workflow, and designed a telemetry tool to faciliate it."
+     " With the telemetry tool, the customer support team can diagnose the problems 10 times faster."]]
+   [:section
+    [:h2 "Our clients"]
+    [:div.w-100.w-80-ns.pv4-ns.pr7-ns.pr4.flex.justify-between
+     [:img.w-20-ns.w-10 {:src "/assets/images/client/invistron.png"}]
+     [:img.w-20-ns.w-10 {:src "/assets/images/client/gmcsr.png"}]
+     [:img.w-20-ns.w-10 {:src "/assets/images/client/kumon.jpeg"}]
+     [:div.w-20-ns.pv4-ns [:p "OrangeSkyLab"]]]]])
 
 (defn- create-footer
   "render the <footer>"
@@ -118,17 +140,29 @@
 
 (defn- create-body
   "This will render html <body>"
-  [entries]
+  [{:keys [path entries]}]
   [:body.helvetica.dark-gray
    (create-nav)
    (create-header)
-   (create-main entries)
+   (case path
+     :home (create-home-main entries)
+     :client (create-client-main))
    (create-footer)])
 
 (defn home-page
   "the page renderer"
-  [{global-meta :meta entries :entries}]
+  [{:keys [meta entries]}]
   (hp/html5
    {:lang "en"}
-   (create-head "replware")
-   (create-body entries)))
+   (create-head "REPLWARE (睿博資訊)")
+   (create-body {:path :home
+                 :entries entries})))
+
+(defn client-page
+  "the page renderer"
+  [{:keys [meta entry]}]
+  (hp/html5
+   {:lang "en"}
+   (create-head "REPLWARE (睿博資訊)")
+   (create-body {:path :client
+                 :entries nil})))
