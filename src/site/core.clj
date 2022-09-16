@@ -100,16 +100,13 @@
   [:main.w-100.mw8.center.ph3.pv4
    [:section
     [:h2 "Data analytic stack"]
-    [:p "I helped my client to change the workflow in their business intelligence team, used ELT to replace ETL."
-     " With the new workflow, the business intelligence team reduces the data latency by 80%."]]
+    [:p "I help my clients to improve workflow in their business intelligence team by using ELT to replace ETL. With the new workflow, the business intelligence team reduces data latency by 80%."]]
    [:section
     [:h2 "Developer productivity"]
-    [:p "I helped my client to introduce Clojure programming language as their new technical stack and gave their software team necessary training."
-     " With the technical stack, the software team can deliver 3 times faster."]]
+    [:p "I introduce Clojure programming language to my clients as their new technical stack and help to train their software team. By using Clojure, the software team delivers 3 times faster."]]
    [:section
     [:h2 "Debug"]
-    [:p "I helped my client to find out the obstacles in their customer support workflow, and designed a telemetry tool to faciliate it."
-     " With the telemetry tool, the customer support team can diagnose the problems 10 times faster."]]
+    [:p "I help my clients to find out the obstacles in their customer support flow and design a telemetry tool to facilitate it. With the telemetry tool, the customer support team can diagnose the problems 10 times faster."]]
    [:section
     [:h2 "Our clients"]
     [:div.w-100.w-80-ns.pv4-ns.pr7-ns.pr4.flex.justify-between
