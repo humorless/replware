@@ -16,6 +16,9 @@
      :type "image/x-icon"}]
    [:link
     {:rel "stylesheet"
+     :href "/assets/style.css"}]
+   [:link
+    {:rel "stylesheet"
      :href "https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"}]
    [:script
     {:src "https://www.googletagmanager.com/gtag/js?id=UA-135441027-2"}]
@@ -109,11 +112,11 @@
     [:p "I help my clients to find out the obstacles in their customer support flow and design a telemetry tool to facilitate it. With the telemetry tool, the customer support team can diagnose the problems 10 times faster."]]
    [:section
     [:h2 "Our clients"]
-    [:div.w-100.w-80-ns.pv4-ns.pr7-ns.pr4.flex.justify-between
-     [:img.w-20-ns.w-10 {:src "/assets/images/client/invistron.png"}]
-     [:img.w-20-ns.w-10 {:src "/assets/images/client/gmcsr.png"}]
-     [:img.w-20-ns.w-10 {:src "/assets/images/client/kumon.jpeg"}]
-     [:div.w-20-ns.pv4-ns [:p "OrangeSkyLab"]]]]])
+    [:div.clients-gallery
+     [:img {:src "/assets/images/client/kumon.jpeg"}]
+     [:img {:src "/assets/images/client/gmcsr.png"}]
+     [:img {:src "/assets/images/client/invistron.png"}]
+     [:div [:p "OrangeSkyLab"]]]]])
 
 (defn- create-footer
   "render the <footer>"
