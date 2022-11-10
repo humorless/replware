@@ -85,8 +85,8 @@
       [:h2 "services"]
       [:ul
        [:li "Data analytic stack"]
-       [:li "Developer productivity"]
-       [:li "Effective debugging"]
+       [:li "Application programming"]
+       [:li "Debug"]
        [:li "Business strategy formulation"]]]
      [:section
       [:h2 "talks"]
@@ -105,7 +105,7 @@
     [:h2 "Data analytic stack"]
     [:p "I help my clients to improve workflow in their business intelligence team by using ELT to replace ETL. With the new workflow, the business intelligence team reduces data latency by 80%."]]
    [:section
-    [:h2 "Developer productivity"]
+    [:h2 "Application programming"]
     [:p "I introduce Clojure programming language to my clients as their new technical stack and help to train their software team. By using Clojure, the software team delivers 3 times faster."]]
    [:section
     [:h2 "Debug"]
