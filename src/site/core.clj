@@ -84,12 +84,12 @@
      [:section
       [:h2 "services"]
       [:ul
-       [:li "Data analytic stack"]
        [:li "Rapid prototyping"]
        [:li "Enterprise software"]
-       [:li "Developer productivity"]
+       [:li "Data warehouse/Data pipeline/Operational pipeline"]
        [:li "Debug"]
-       [:li "Technology product marketing"]]]
+       [:li "Performance tuning"]
+       [:li "Developer productivity"]]]
      [:section
       [:h2 "talks"]
       talk]
