@@ -47,6 +47,9 @@
       {:href "/client.html"} "Case Studies"]]
     [:li.di.mr3
      [:a.link.dark-gray.hover-red
+      {:href "/newsletter.html"} "Newsletter"]]
+    [:li.di.mr3
+     [:a.link.dark-gray.hover-red
       {:href "https://replware.medium.com/"} "Blog"]]]])
 
 (defn- create-header
