@@ -88,10 +88,9 @@
       [:h2 "services"]
       [:ul
        [:li "Rapid prototyping"]
-       [:li "Enterprise software"]
        [:li "Data warehouse/Data pipeline/Operational pipeline"]
+       [:li "Recommendation system"]
        [:li "Debug"]
-       [:li "Performance tuning"]
        [:li "Developer productivity"]]]
      [:section
       [:h2 "talks"]
