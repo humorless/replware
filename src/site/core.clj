@@ -63,8 +63,8 @@
     {:href "/" :title "home"}
     [:img.mh4.mh2-ns.mt2 {:src "/assets/logo/logo_transparent_background.png"}]]
    [:h1.ph4.pv2.ph5-ns.pv4-ns.white
-    [:div "turn " [:span.yellow "technology"]]
-    [:div "into " [:span.light-blue.center "the edge"]]]])
+    [:div "bring " [:span.yellow "fast iteration"]]
+    [:div "into " [:span.light-blue.center "your business"]]]])
 
 (defn ->content-by-tag
   "select by tag"
@@ -92,9 +92,9 @@
       [:ul
        [:li "Rapid prototyping"]
        [:li "Data warehouse/Data pipeline/Operational pipeline"]
-       [:li "Recommendation system"]
+       [:li "Software architecture design"]
        [:li "Debug"]
-       [:li "Developer productivity"]]]
+       [:li "Recommendation system"]]]
      [:section
       [:h2 "talks"]
       talk]
