@@ -13,7 +13,7 @@ newsletter: true
 <div id="mc_embed_signup">
     <form action="https://dev.us8.list-manage.com/subscribe/post?u=7a6e29d3d8076a13a877e826b&amp;id=cfe4a0a29a&amp;f_id=00fe7ce0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <div id="mc_embed_signup_scroll">
-        <h2>Subscribe REPLWARE's newsletter --- PrunningSuccess</h2> Currently written in Mandarin
+        <h2>Subscribe REPLWARE's newsletter</h2> Currently written in Mandarin
         <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 <div class="mc-field-group">
 	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
