@@ -19,6 +19,7 @@
          '[deraen.boot-sass :refer [sass]])
 
 (def home? (comp #(= % true) :home))
+(def auxi? (comp #(= % true) :auxi))
 
 (deftask
   build
@@ -28,6 +29,10 @@
         (perun/markdown)
         (perun/static :renderer 'site.core/client-page
                       :page "client.html")
+        (perun/collection :renderer 'site.core/newsletter-page
+                          :filterer auxi?
+                          :sortby :path
+                          :page "newsletter.html")
         (perun/collection :renderer 'site.core/home-page
                           :filterer home?
                           :sortby :path

@@ -1,5 +1,5 @@
 ---
-home: true
+auxi: true
 newsletter: true
 ---
 

@@ -74,6 +74,14 @@
        (map :content)
        first))
 
+(defn- create-newsletter-main
+  "render the <main>"
+  [entries]
+  (let [newsletter (->content-by-tag :newsletter entries)]
+    (prn newsletter)
+    [:main.w-100.mw8.center.ph3.pv4
+     newsletter]))
+
 (defn- create-home-main
   "render the <main>"
   [entries]
@@ -153,6 +161,7 @@
    (create-header)
    (case path
      :home (create-home-main entries)
+     :newsletter (create-newsletter-main entries)
      :client (create-client-main))
    (create-footer)])
 
@@ -163,6 +172,15 @@
    {:lang "en"}
    (create-head "REPLWARE (睿博資訊)")
    (create-body {:path :home
+                 :entries entries})))
+
+(defn newsletter-page
+  "the page renderer"
+  [{:keys [meta entries]}]
+  (hp/html5
+   {:lang "en"}
+   (create-head "REPLWARE (睿博資訊)")
+   (create-body {:path :newsletter
                  :entries entries})))
 
 (defn client-page
