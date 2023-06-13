@@ -98,11 +98,11 @@
      [:section
       [:h2 "services"]
       [:ul
-       [:li "Rapid prototyping"]
+       [:li "Root cause analysis"]
        [:li "Data warehouse/Data pipeline/Operational pipeline"]
-       [:li "Software architecture design"]
-       [:li "Debug"]
-       [:li "Recommendation system"]]]
+       [:li "Recommendation system"]
+       [:li "Rapid prototyping"]
+       [:li "Software architecture design"]]]
      [:section
       [:h2 "talks"]
       talk]
@@ -123,7 +123,7 @@
     [:h2 "Software architecture design"]
     [:p "I help my clients to design the software architecture. With the new architecture, their program utilizes database more effectively and thus runs 5 times faster."]]
    [:section
-    [:h2 "Debug"]
+    [:h2 "Root cause analysis"]
     [:p "I help my clients to find out the obstacles in their customer support flow and design a telemetry tool to facilitate it. With the telemetry tool, the customer support team can diagnose the problems 10 times faster."]]
    [:section
     [:h2 "My clients"]
