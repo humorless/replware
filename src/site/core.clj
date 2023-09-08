@@ -128,6 +128,7 @@
    [:section
     [:h2 "My clients"]
     [:div.clients-gallery
+     [:img {:src "/assets/images/client/xrexinc.jpeg"}]
      [:img {:src "/assets/images/client/kumon.jpeg"}]
      [:img {:src "/assets/images/client/gmcsr.png"}]
      [:img {:src "/assets/images/client/invistron.png"}]
