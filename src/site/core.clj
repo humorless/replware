@@ -98,11 +98,10 @@
      [:section
       [:h2 "services"]
       [:ul
+       [:li "Modern data stack"]
+       [:li "Graph database"]
        [:li "Root cause analysis"]
-       [:li "Data warehouse/Data pipeline/Operational pipeline"]
-       [:li "Recommendation system"]
-       [:li "Rapid prototyping"]
-       [:li "Software architecture design"]]]
+       [:li "Rapid prototyping"]]]
      [:section
       [:h2 "talks"]
       talk]
