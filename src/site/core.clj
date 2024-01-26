@@ -113,10 +113,10 @@
   []
   [:main.w-100.mw8.center.ph3.pv4
    [:section
-    [:h2 "Data analytic stack"]
+    [:h2 "Modern data stack"]
     [:p "I help my clients to improve workflow in their business intelligence team by using ELT to replace ETL. With the new workflow, the business intelligence team reduces data latency by 80%."]]
    [:section
-    [:h2 "Software architecture design"]
+    [:h2 "Effective programming"]
     [:p "I help my clients to design the software architecture. With the new architecture, their program utilizes database more effectively and thus runs 5 times faster."]]
    [:section
     [:h2 "Root cause analysis"]
