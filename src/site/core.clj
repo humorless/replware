@@ -99,9 +99,9 @@
       [:h2 "services"]
       [:ul
        [:li "Modern data stack"]
-       [:li "Graph database"]
+       [:li "Effective programming"]
        [:li "Root cause analysis"]
-       [:li "Rapid prototyping"]]]
+      ]]
      [:section
       [:h2 "talks"]
       talk]
