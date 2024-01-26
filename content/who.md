@@ -5,6 +5,8 @@ who: true
 
 I am **Laurence Chen**, and **REPLWARE** is my IT consulting company.
 
-My mission is simple: I want to bring productivity to people. Productivity can be improved in several categories, such as: software development, data analytics, debugging workflow, or strategy formulation.
+My mission is to empower technology professionals, especially CTOs, CIOs, and CDOs, enabling them to operate efficiently at the strategic level and communicate effectively with a high degree of clarity.
 
-Most companies agree on higher productivity, but the way towards higher productivity, full of experiments and ambiguities, is sometimes intimidating. That is why you need me: I can collaborate with you, transfer necessary knowledge to your team, and thus achieve fast and sustainable results.
+As a technical professional, are you actively involved in strategic-level work? Perhaps you participate in daily strategic meetings within the company, possibly overseeing multiple subordinates. In terms of management, you harness the capabilities of individuals to enhance overall productivity. How about on the technical side? Are you fully utilizing the available technical resources?
+
+This is where I come in. I can collaborate with you, impart necessary knowledge to both you and your team, and consequently, achieve rapid and sustainable results.
