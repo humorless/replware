@@ -47,9 +47,6 @@
       {:href "/client.html"} "Case Studies"]]
     [:li.di.mr3
      [:a.link.dark-gray.hover-red
-      {:href "/newsletter.html"} "Newsletter"]]
-    [:li.di.mr3
-     [:a.link.dark-gray.hover-red
       {:href "https://leanpub.com/errors_to_innovation/"} "Book"]]
     [:li.di.mr3
      [:a.link.dark-gray.hover-red
