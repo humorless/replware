@@ -5,8 +5,8 @@ who: true
 
 I am **Laurence Chen**, and **REPLWARE** is my IT consulting company.
 
-My mission is to empower technology professionals, especially CTOs, CIOs, and CDOs, enabling them to operate efficiently at the strategic level and communicate effectively with a high degree of clarity.
+My mission is to empower senior technical people to operate effectively at the strategic level and communicate with a high degree of clarity.
 
-As a technical professional, are you actively involved in strategic-level work? Perhaps you participate in daily strategic meetings within the company, possibly overseeing multiple subordinates. In terms of management, you harness the capabilities of individuals to enhance overall productivity. How about on the technical side? Are you fully utilizing the available technical resources?
+Many technical departments have the same problem: Working hard day after day, but still chasing the deadline. The more things we build, the more there are to maintain. The essence of the problem is that we usually do not work at the domain problem level and are dragged into low-level details too often. In other words, we do not work strategically enough.
 
-This is where I come in. I can collaborate with you, impart necessary knowledge to both you and your team, and consequently, achieve rapid and sustainable results.
+That is why you need me: I can collaborate with you, transfer necessary knowledge to you and your team, and thus achieve fast and sustainable results.
