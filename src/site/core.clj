@@ -98,7 +98,7 @@
        [:li "Modern data stack"]
        [:li "Effective programming"]
        [:li "Root cause analysis"]
-      ]]
+       [:li "Digital transformation"]]]
      [:section
       [:h2 "talks"]
       talk]
@@ -124,6 +124,7 @@
    [:section
     [:h2 "My clients"]
     [:div.clients-gallery
+     [:img {:src "/assets/images/client/ctbc.svg"}]
      [:img {:src "/assets/images/client/xrexinc.jpeg"}]
      [:img {:src "/assets/images/client/kumon.jpeg"}]
      [:img {:src "/assets/images/client/gmcsr.png"}]
