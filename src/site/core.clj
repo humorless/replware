@@ -140,10 +140,10 @@
     [:ul.mv0.pr4.pr5-ns.list
      [:li.f5.di.mr3
       [:a.link.dark-gray.hover-red
-       {:href "https://twitter.com/humorless"} "Twitter"]]
+       {:href "https://g0v.social/@replware"} "Mastodon"]]
      [:li.f5.di.mr3
       [:a.link.dark-gray.hover-red
-       {:href "https://linkedin.com/in/humorless"} "Linkedin"]]
+       {:href "https://linkedin.com/in/replware"} "Linkedin"]]
      [:li.f5.di.mr3
       [:a.link.dark-gray.hover-red
        {:href "https://github.com/humorless"} "Github"]]
