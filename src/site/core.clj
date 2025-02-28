@@ -97,7 +97,6 @@
       [:ul
        [:li "Modern data stack"]
        [:li "Effective programming"]
-       [:li "Root cause analysis"]
        [:li "Digital transformation"]]]
      [:section
       [:h2 "talks"]
@@ -114,13 +113,10 @@
   [:main.w-100.mw8.center.ph3.pv4
    [:section
     [:h2 "Modern data stack"]
-    [:p "I help my clients to improve workflow in their business intelligence team by using ELT to replace ETL. With the new workflow, the business intelligence team reduces data latency by 80%."]]
+    [:p "I help my clients improve workflow in their business intelligence team by using ELT to replace ETL. With the new workflow, the business intelligence team reduces data latency by 80%."]]
    [:section
     [:h2 "Effective programming"]
-    [:p "I help my clients to design the software architecture. With the new architecture, their program utilizes database more effectively and thus runs 5 times faster."]]
-   [:section
-    [:h2 "Root cause analysis"]
-    [:p "I help my clients to find out the obstacles in their customer support flow and design a telemetry tool to facilitate it. With the telemetry tool, the customer support team can diagnose the problems 10 times faster."]]
+    [:p "I help my client choose the technical stack, design suitable software architecture, and focus on simplicity. In the end, we not only reduce time to market by 50%, but also achieve a faster program."]]
    [:section
     [:h2 "My clients"]
     [:div.clients-gallery
