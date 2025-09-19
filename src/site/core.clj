@@ -47,7 +47,7 @@
       {:href "/client.html"} "Case Studies"]]
     [:li.di.mr3
      [:a.link.dark-gray.hover-red
-      {:href "https://leanpub.com/errors_to_innovation/"} "Book"]]
+      {:href "https://replware.dev/mds"} "Book"]]
     [:li.di.mr3
      [:a.link.dark-gray.hover-red
       {:href "https://replware.substack.com/"} "Blog"]]]])
