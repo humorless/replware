@@ -96,8 +96,7 @@
       [:h2 "services"]
       [:ul
        [:li "Modern data stack"]
-       [:li "Effective programming"]
-       [:li "Digital transformation"]]]
+       [:li "Fractional CDO"]]]
      [:section
       [:h2 "talks"]
       talk]
@@ -114,9 +113,6 @@
    [:section
     [:h2 "Modern data stack"]
     [:p "I help my clients improve workflow in their business intelligence team by using ELT to replace ETL. With the new workflow, the business intelligence team reduces data latency by 80%."]]
-   [:section
-    [:h2 "Effective programming"]
-    [:p "I help my client choose the technical stack, design suitable software architecture, and focus on simplicity. In the end, we not only reduce time to market by 50%, but also achieve a faster program."]]
    [:section
     [:h2 "My clients"]
     [:div.clients-gallery
