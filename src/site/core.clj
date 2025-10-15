@@ -96,7 +96,7 @@
       [:h2 "services"]
       [:ul
        [:li "Modern data stack"]
-       [:li "Fractional CDO"]]]
+       [:li "Fractional CDO (Chief Data Officer)"]]]
      [:section
       [:h2 "talks"]
       talk]
