@@ -95,8 +95,8 @@
      [:section
       [:h2 "services"]
       [:ul
-       [:li "Modern data stack"]
-       [:li "Fractional CDO (Chief Data Officer)"]]]
+       [:li "Modern Data Stack"]
+       [:li "Workflow Engine"]]]
      [:section
       [:h2 "talks"]
       talk]
