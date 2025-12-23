@@ -3,8 +3,8 @@ home: true
 testimonial: true
 ---
 <blockquote>
- <p> "Laurence delivered the software through fast-prototyped and then improved by user's feedback. This method really worked effectively for us." </p>
+ <p> "Laurence helped us implement the Modern Data Stack, rapidly building out our data platform in just about three months. The results were transformative: report generation time was slashed from 27 minutes to under 10 seconds. Furthermore, our team's report development speed has tripled. Laurence’s expertise delivered both performance and agility." </p>
 
- <h3 class="orange mb0"> Jessie Wu, CEO </h3>
- <h4 class="gray mt0"> INVISTRON Co. Ltd. </h4>
+ <h3 class="orange mb0"> Ted Lee, IT Manager </h3>
+ <h4 class="gray mt0"> GiantPlus Group Inc. </h4>
 </blockquote>

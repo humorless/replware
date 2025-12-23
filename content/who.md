@@ -3,10 +3,14 @@ home: true
 who: true
 ---
 
-I am **Laurence Chen**, and **REPLWARE** is my IT consulting company.
+**Laurence Chen | REPLWARE Platform Engineering Consultant**
 
-My mission is to empower senior technical people to operate more effectively at the strategic level and communicate with a high degree of clarity.
+I am dedicated to helping enterprises achieve true alignment between technology and business through Platform Engineering. I specialize in the planning and implementation of three core platforms: **Data**, **Workflow**, and **Auth**.
 
-Many technical departments share a common problem: Working hard day after day, but still chasing the deadline. As more things are built, productivity and efficiency does not grow proportionately because resources are becoming more constrained by maintenance over time. The crux of the problem is that we usually do not work at the domain problem level and are dragged into low-level details too often. In other words, we do not work strategically enough.
+The dilemma many technical teams face is that as systems grow, maintenance costs inadvertently slow down R&D speed. This is often due to blurred platform boundaries and a lack of "strategic division of labor." Leveraging Team Topologies principles, I assist companies in:
 
-That is why you need me: I can collaborate with you, transfer necessary knowledge to you and your team, and  thus prepare you with the capability to achieve fast and sustainable results.
+**Implementing Standardized Infrastructure:** Deploying Modern Data Stack, Workflow Engine, and SSO to realize the principle of "Separate What and How."
+
+**Designing Platform Operating Models:** Defining platform team boundaries, evaluating requirement priorities, and establishing efficient Developer Self-Service.
+
+**Optimizing Organizational Cognitive Load:** Through a strategic division of labor, I empower product teams to focus on business value, turning technology into an engine for growth rather than a bottleneck.

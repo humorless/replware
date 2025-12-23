@@ -44,7 +44,7 @@
       {:href "/"} "Home"]]
     [:li.di.mr3
      [:a.link.dark-gray.hover-red
-      {:href "/client.html"} "Case Studies"]]
+      {:href "/client.html"} "How I Work & Who I've Helped"]]
     [:li.di.mr3
      [:a.link.dark-gray.hover-red
       {:href "https://replware.dev/mds"} "Book"]]
@@ -95,8 +95,9 @@
      [:section
       [:h2 "services"]
       [:ul
-       [:li "Modern Data Stack"]
-       [:li "Workflow Engine"]]]
+       [:li "Data Platform (Modern Data Stack)"]
+       [:li "Workflow Orchestration"]
+       [:li "Identity & Access Management"]]]
      [:section
       [:h2 "talks"]
       talk]
@@ -111,11 +112,15 @@
   []
   [:main.w-100.mw8.center.ph3.pv4
    [:section
-    [:h2 "Modern data stack"]
-    [:p "I help my clients improve workflow in their business intelligence team by using ELT to replace ETL. With the new workflow, the business intelligence team reduces data latency by 80%."]]
+    [:h2 "Engagement Model"]
+    [:p "Typically, our partnership begins after you’ve explored my insights on platform architecture. We’ll start with a deep-dive conversation to see if my strategic approach aligns with your organizational goals."]
+    [:p "Once I understand your specific challenges, I will draft a tailored proposal that defines the platform boundaries, technical stack, and a clear roadmap for execution."]
+    [:p "A typical engagement lasts about 3 months. I provide on-site consultancy one day per week. To ensure successful knowledge transfer, I require at least one dedicated engineer from your team to collaborate 1–2 days per week on the project."]
+    [:p "We define success by results. The engagement concludes when your existing business logic is successfully running on the new architecture, proving the platform's reliability and readiness for future scale."]]
    [:section
     [:h2 "My clients"]
     [:div.clients-gallery
+     [:img {:src "/assets/images/client/giantplus.svg"}]
      [:img {:src "/assets/images/client/ctbc.svg"}]
      [:img {:src "/assets/images/client/xrexinc.jpeg"}]
      [:img {:src "/assets/images/client/kumon.jpeg"}]
