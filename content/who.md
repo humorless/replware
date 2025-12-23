@@ -11,6 +11,6 @@ The dilemma many technical teams face is that as systems grow, maintenance costs
 
 **Implementing Standardized Infrastructure:** Deploying Modern Data Stack, Workflow Engine, and SSO to realize the principle of "Separate What and How."
 
-**Designing Platform Operating Models:** Defining platform team boundaries, evaluating requirement priorities, and establishing efficient Developer Self-Service.
+**Designing Platform Operating Models**: Defining platform team boundaries, evaluating requirement priorities, and establishing efficient self-service infrastructure.
 
-**Optimizing Organizational Cognitive Load:** Through a strategic division of labor, I empower product teams to focus on business value, turning technology into an engine for growth rather than a bottleneck.
+**Optimizing Organizational Cognitive Load:** Through a strategic division of labor, I empower stream-aligned teams to focus on business value, turning technology into an engine for growth rather than a bottleneck.
