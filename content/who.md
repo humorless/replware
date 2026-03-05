@@ -3,18 +3,10 @@ home: true
 who: true
 ---
 
-**Laurence Chen | Platform Architecture & Organizational Design Consultant**
+**Laurence Chen | Modern Data Stack Consultant**
 
-I help enterprises realign technology with business by designing **clear platform boundaries and operating models**, enabling technology to support growth rather than becoming a source of friction.
+I help mid-to-large enterprises build reliable data platforms using open source tools — deployed on-premise, owned by your team.
 
-My work focuses on identifying capabilities that are repeatedly built across teams—and intentionally elevating them into stable, shared platforms. I specialize in the planning and implementation of three core organizational platforms: **Data**, **Workflow**, and **Auth**.
+For organizations where data cannot leave the firewall, or where reducing commercial licensing costs matters, I design and implement Modern Data Stack solutions built on proven open source technology: Clickhouse, dbt, Metabase, Kestra, and Meltano.
 
-As systems grow, many organizations experience rising maintenance costs and slowing R&D speed. The root cause is often not technical complexity itself, but **unclear responsibility boundaries and a lack of strategic division of labor** across teams.
-
-Drawing on *Team Topologies* principles, I help enterprises:
-
-**Define Platform Boundaries and Responsibilities**: Clarify which capabilities should remain close to business execution, and which should be centralized as shared platforms with clear ownership and interfaces.
-
-**Design Platform Operating Models**: Establish how platform teams evaluate priorities, provide self-service capabilities, and evolve sustainably without becoming approval bottlenecks.
-
-**Reduce Organizational Cognitive Load**: Through deliberate separation of *what* from *how*, I enable business-facing teams to focus on delivering business value, while platforms provide stable, reusable foundations for the organization.
+What makes my engagements different: I don't just deliver a platform and leave. I work directly with your engineers — teaching them to write the SQL, build the models, and understand the architecture — so your team can maintain and evolve the platform long after the engagement ends.

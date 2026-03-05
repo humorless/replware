@@ -96,8 +96,8 @@
       [:h2 "services"]
       [:ul
        [:li "Data Platform (Modern Data Stack)"]
-       [:li "Workflow Orchestration"]
-       [:li "Identity & Access Management"]]]
+       [:li "On-Premise Open Source Deployment"]
+       [:li "Engineer Enablement & Knowledge Transfer"]]]
      [:section
       [:h2 "talks"]
       talk]
