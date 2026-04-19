@@ -1,0 +1,47 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - boot-code
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout boot-code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '11'
+
+      - name: Install Boot
+        run: |
+          curl -fsSLo boot https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh
+          chmod +x boot
+          sudo mv boot /usr/local/bin/boot
+
+      - name: Cache Boot dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.boot
+          key: boot-${{ hashFiles('build.boot', 'boot.properties') }}
+          restore-keys: boot-
+
+      - name: Build
+        run: boot build-prod
+
+      - name: Verify build output
+        run: ls -la target/public/
+
+      - name: Deploy to master
+        if: ${{ !env.ACT }}
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: master
+          folder: target/public
+          clean: true
