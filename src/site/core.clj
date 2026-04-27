@@ -96,8 +96,8 @@
       [:h2 "services"]
       [:ul
        [:li "Data Platform (Modern Data Stack)"]
-       [:li "On-Premise Open Source Deployment"]
-       [:li "Engineer Enablement & Knowledge Transfer"]]]
+       [:li "Graph Analysis"]
+       [:li "AI Bottleneck Audit"]]]
      [:section
       [:h2 "talks"]
       talk]
