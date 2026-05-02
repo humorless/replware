@@ -97,7 +97,7 @@
       [:ul
        [:li "Data Platform (Modern Data Stack)"]
        [:li "Graph Analysis"]
-       [:li "AI Bottleneck Audit"]]]
+       [:li "Digital Transformation"]]]
      [:section
       [:h2 "talks"]
       talk]
@@ -113,10 +113,10 @@
   [:main.w-100.mw8.center.ph3.pv4
    [:section
     [:h2 "Engagement Model"]
-    [:p "Typically, our partnership begins after you’ve explored my insights on platform architecture. We’ll start with a deep-dive conversation to see if my strategic approach aligns with your organizational goals."]
-    [:p "Once I understand your specific challenges, I will draft a tailored proposal that defines the platform boundaries, technical stack, and a clear roadmap for execution."]
+    [:p "Typically, our partnership begins after you've explored my work on data platform architecture — through my book, talks, or community. We'll start with a deep-dive conversation to see if my approach aligns with your goals."]
+    [:p "Once I understand your specific challenges, I will draft a tailored proposal that defines the data platform boundaries, technical stack, and a clear roadmap for execution."]
     [:p "A typical engagement lasts about 3 months. I provide on-site consultancy one day per week. To ensure successful knowledge transfer, I require at least one dedicated engineer from your team to collaborate 1–2 days per week on the project."]
-    [:p "We define success by results. The engagement concludes when your existing business logic is successfully running on the new architecture, proving the platform's reliability and readiness for future scale."]]
+    [:p "We define success by results. The engagement concludes when your existing business logic is successfully running on the new data platform, proving its reliability and readiness for future scale."]]
    [:section
     [:h2 "My clients"]
     [:div.clients-gallery
