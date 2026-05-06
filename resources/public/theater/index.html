@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文山劇場座位表</title>
+<link rel="stylesheet" href="seat-new.css">
+</head>
+<body>
+
+<header>
+  <h1>臺北市藝文推廣處文山劇場</h1>
+  <p>座位分配圖　｜　租借節目</p>
+</header>
+
+<div id="form-section">
+  <p class="form-hint">每行一筆，格式：名字, 排數, 起始座位, 結束座位</p>
+  <textarea id="seat-input" rows="10" placeholder="王小明,3,1,5&#10;李大華,5,6,8"></textarea>
+  <button id="submit-btn">確認排位</button>
+</div>
+
+<div class="theater-wrap" id="theater" style="display:none">
+  <div class="stage">
+    <svg viewBox="0 0 500 64" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:64px;display:block;">
+      <line x1="100" y1="4" x2="100" y2="60" stroke="#c9a84c" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.8"/>
+      <line x1="400" y1="4" x2="400" y2="60" stroke="#c9a84c" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.8"/>
+      <text x="130" y="36" text-anchor="middle" fill="#e8c97a" font-size="20" font-family="serif">1</text>
+      <text x="190" y="36" text-anchor="middle" fill="#e8c97a" font-size="20" font-family="serif">2</text>
+      <text x="250" y="36" text-anchor="middle" fill="#e8c97a" font-size="20" font-family="serif">3</text>
+      <text x="310" y="36" text-anchor="middle" fill="#e8c97a" font-size="20" font-family="serif">4</text>
+      <text x="370" y="36" text-anchor="middle" fill="#e8c97a" font-size="20" font-family="serif">5</text>
+      <text x="250" y="57" text-anchor="middle" fill="#c9a84c" font-size="10" font-family="serif" letter-spacing="6" opacity="0.6">舞　台</text>
+    </svg>
+  </div>
+</div>
+
+<div class="legend" id="legend" style="display:none">
+  <div class="legend-item"><div class="legend-swatch empty"></div>空位</div>
+  <div class="legend-item"><div class="legend-swatch taken"></div>已劃位</div>
+  <div class="legend-item"><div class="legend-swatch reserved"></div>保留席</div>
+</div>
+
+<div class="row-note" id="row-note" style="display:none">＊ 第一排、第十六排、第十七排為系統保留席位</div>
+
+<script src="seat-new.js"></script>
+<script>
+document.getElementById('submit-btn').addEventListener('click', function () {
+  var lines = document.getElementById('seat-input').value.split('\n');
+  lines.forEach(function (line) {
+    line = line.trim();
+    if (!line) return;
+    var parts = line.split(',').map(function (p) { return p.trim(); });
+    if (parts.length !== 4) return;
+    assign(parts[0], Number(parts[1]), Number(parts[2]), Number(parts[3]));
+  });
+  renderTheater();
+  document.getElementById('form-section').style.display = 'none';
+  document.getElementById('theater').style.display = '';
+  document.getElementById('legend').style.display = '';
+  document.getElementById('row-note').style.display = '';
+});
+</script>
+</body>
+</html>
