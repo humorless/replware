@@ -165,7 +165,7 @@
   [{:keys [meta entries]}]
   (hp/html5
    {:lang "en"}
-   (create-head "REPLWARE (睿博資訊)")
+   (create-head "REPLWARE (睿博資訊有限公司)")
    (create-body {:path :home
                  :entries entries})))
 
@@ -174,7 +174,7 @@
   [{:keys [meta entries]}]
   (hp/html5
    {:lang "en"}
-   (create-head "REPLWARE (睿博資訊)")
+   (create-head "REPLWARE (睿博資訊有限公司)")
    (create-body {:path :newsletter
                  :entries entries})))
 
@@ -183,6 +183,6 @@
   [{:keys [meta entry]}]
   (hp/html5
    {:lang "en"}
-   (create-head "REPLWARE (睿博資訊)")
+   (create-head "REPLWARE (睿博資訊有限公司)")
    (create-body {:path :client
                  :entries nil})))
