@@ -96,8 +96,8 @@
       [:h2 "services"]
       [:ul
        [:li "Data Platform (Modern Data Stack)"]
-       [:li "Graph Analysis"]
-       [:li "Digital Transformation"]]]
+       [:li "Observability"]
+       [:li "Fractional CTO"]]]
      [:section
       [:h2 "talks"]
       talk]
