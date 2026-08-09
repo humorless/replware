@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ffffff;
+  --border: #d0c8b8;
+  --gold: #8b5e1a;
+  --text: #1a1208;
+  --text-muted: #7a6a50;
+  --ink: #1a1208;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans TC', sans-serif;
+  min-height: 100vh;
+  padding: 32px 20px 48px;
+}
+
+/* ---------- 控制列 ---------- */
+
+.controls {
+  max-width: 210mm;
+  margin: 0 auto 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px 28px;
+}
+
+.controls h1 {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 900;
+  font-size: clamp(18px, 3vw, 24px);
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: flex-end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-label {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.field-body {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.controls select {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.controls button {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  padding: 8px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--gold);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.controls button.primary {
+  background: var(--gold);
+  color: #fff9ee;
+}
+
+.controls button:hover { opacity: 0.8; }
+
+.hint {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ---------- 作業紙 ---------- */
+
+.sheet {
+  width: 210mm;
+  height: 296mm;
+  padding: 15mm;
+  margin: 0 auto 24px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sheet-header {
+  flex: 0 0 auto;
+  margin-bottom: 8mm;
+  padding-bottom: 4mm;
+  border-bottom: 1px solid #ccc;
+}
+
+.sheet-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 5mm;
+}
+
+.sheet-title {
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 900;
+  font-size: 20pt;
+  letter-spacing: 0.2em;
+}
+
+.sheet-page {
+  font-size: 10pt;
+  color: #666;
+  letter-spacing: 0.05em;
+}
+
+.sheet-fields {
+  display: flex;
+  align-items: baseline;
+  gap: 4mm;
+  font-size: 11pt;
+  color: #444;
+}
+
+.sheet-blank {
+  flex: 1 1 0;
+  border-bottom: 1px solid #999;
+  height: 1em;
+}
+
+.grid {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  column-gap: 8mm;
+}
+
+.q {
+  display: flex;
+  align-items: center;
+  gap: 4mm;
+  border-bottom: 1px dotted #ddd;
+}
+
+.q-no {
+  flex: 0 0 12mm;
+  text-align: right;
+  font-size: 12pt;
+  color: #888;
+}
+
+/* 固定 5 格：運算元格一律 17mm，數字與空格框同寬，
+   各題的 × 和 = 才會跨欄跨列對齊 */
+.q-eq {
+  display: grid;
+  grid-template-columns: 17mm 9mm 17mm 9mm 17mm;
+  align-items: center;
+  justify-items: center;
+  font-size: 26pt;
+  font-weight: 500;
+}
+
+.q-eq .op {
+  color: #555;
+}
+
+.q-eq .box {
+  display: inline-block;
+  width: 13mm;
+  height: 11mm;
+  border: 2px solid #333;
+  border-radius: 2px;
+}
+
+/* ---------- 列印 ---------- */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+
+  .controls { display: none; }
+
+  .sheet {
+    margin: 0;
+    box-shadow: none;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .sheet:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .q { border-bottom-color: #eee; }
+}

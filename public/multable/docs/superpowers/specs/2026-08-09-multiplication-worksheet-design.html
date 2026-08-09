@@ -1,0 +1,78 @@
+<h1><a href="#乘法填充題作業產生器-design" id="乘法填充題作業產生器-design"></a>乘法填充題作業產生器 Design</h1>
+<p><strong>Date:</strong> 2026-08-09 <strong>Project:</strong> multable (<code>resources/public/multable</code>)</p>
+<h2><a href="#summary" id="summary"></a>Summary</h2>
+<p>一個純前端、無 build step 的網頁工具。家長選好乘法範圍與題目順序，頁面即時產生分頁的乘法填充題作業，按 Ctrl+P 就能印出 A4 作業紙。技術結構比照同目錄的 <code>theater/</code>：一個 <code>index.html</code> + 一支 <code>.css</code> + 一支 <code>.js</code>，可直接部署到 GitHub Pages。</p>
+<h2><a href="#architecture" id="architecture"></a>Architecture</h2>
+<p>三個檔案，無框架、無相依套件、無 build：</p>
+<pre><code>multable/
+  index.html     控制列 + #sheets 容器 + 綁事件的 inline &lt;script&gt;
+  multable.css   螢幕樣式 + @media print + @page A4
+  multable.js    產題 / 洗牌 / 分頁 / 渲染
+</code></pre>
+<p>資料流：</p>
+<pre><code class="language-dot">digraph flow {
+  rankdir=LR;
+  &quot;控制列 change&quot; -&gt; &quot;readSettings()&quot; -&gt; &quot;buildQuestions()&quot; -&gt; &quot;paginate()&quot; -&gt; &quot;render()&quot; -&gt; &quot;#sheets&quot;;
+}
+</code></pre>
+<p>沒有顯示/隱藏狀態機：控制列永遠在，作業永遠在，<code>@media print</code> 時控制列消失。任一控制項變動就整份重畫。</p>
+<h2><a href="#控制列-controls" id="控制列-controls"></a>控制列 (<code>.controls</code>)</h2>
+<p>| 元件 | 型別 | 值 | |---|---|---| | 乘法範圍 起 | <code>&lt;select id=&quot;from&quot;&gt;</code> | 1–9，預設 2 | | 乘法範圍 迄 | <code>&lt;select id=&quot;to&quot;&gt;</code> | 1–9，預設 9 | | 題目順序 | <code>&lt;input type=&quot;radio&quot; name=&quot;order&quot;&gt;</code> | <code>seq</code>（順排，預設）／ <code>rand</code>（隨機） | | 重新產生 | <code>&lt;button id=&quot;regen&quot;&gt;</code> | 重跑一次 render |</p>
+<ul>
+<li>標籤文字：<code>乘法範圍：從 [ ] 到 [ ]</code>、<code>題目順序：順排／隨機</code>。</li>
+<li>只想練一個數字時，起迄選同一個值（例如 從 9 到 9）。</li>
+<li><code>from &gt; to</code> 時內部自動對調，不顯示錯誤。</li>
+<li>「重新產生」在隨機模式下換一批題序；在順排模式下題序不變，但重洗填空位置。</li>
+</ul>
+<h2><a href="#產題邏輯-multablejs" id="產題邏輯-multablejs"></a>產題邏輯 (<code>multable.js</code>)</h2>
+<pre><code>buildQuestions(from, to, order) -&gt; [{a, b, blank}]
+  a 走訪 from..to，b 走訪 1..9  →  (to - from + 1) * 9 題
+  order === 'seq'  : 依 a 遞增、再依 b 遞增
+  order === 'rand' : Fisher–Yates 洗牌
+  blank: 每題獨立隨機，Math.random() &lt; 0.75 ? 'product' : 'factor'
+
+paginate(questions, 12) -&gt; [[q...], [q...], ...]
+</code></pre>
+<ul>
+<li><code>blank === 'product'</code> 渲染為 <code>a × b = ▢</code></li>
+<li><code>blank === 'factor'</code> 渲染為 <code>a × ▢ = a*b</code></li>
+<li>乘號一律用 <code>×</code>（U+00D7），符合國小作業慣例。</li>
+<li>最後一頁不補滿。例如 從 2 到 4 = 27 題 → 3 頁（12 / 12 / 3）。</li>
+<li>題號跨頁連續編號（1 到 N）。</li>
+</ul>
+<h2><a href="#版面-multablecss" id="版面-multablecss"></a>版面 (<code>multable.css</code>)</h2>
+<p><strong>列印</strong> - <code>@page { size: A4; margin: 15mm }</code> → 內容區 180mm × 267mm - 每個 <code>.sheet</code> 是一張 A4，<code>page-break-after: always</code>（最後一張 <code>:last-child</code> 取消） - <code>@media print</code>：<code>.controls { display: none }</code>、<code>.sheet</code> 去掉陰影與外距</p>
+<p><strong>每頁結構</strong></p>
+<pre><code>.sheet
+  .sheet-header    姓名：____________　日期：____________　　第 N 頁 / 共 M 頁
+  .grid            2 欄 × 6 列 grid，共 12 格
+    .q             題號 + 算式
+</code></pre>
+<ul>
+<li><code>.grid</code>：<code>grid-template-columns: 1fr 1fr</code>，列高平均分配剩餘空間。</li>
+<li><code>.q</code> 算式字級約 28pt，題號約 14pt 置於算式左側。</li>
+<li>填空格 <code>.box</code>：約 18mm × 12mm 的方框（<code>border: 2px solid</code>），小孩好寫。</li>
+</ul>
+<p><strong>螢幕</strong> - 沿用 theater 的色調：米色底 <code>--bg: #f5f0e8</code>、襯線標題、<code>--gold: #8b5e1a</code>。 - <code>.sheet</code> 在螢幕上白底加陰影，模擬紙張；寬 210mm、高 297mm、<code>padding: 15mm</code>（<code>@page margin</code> 只在列印生效，螢幕上要自己補），視窗窄時單純允許水平捲動，不做縮放。列印時 <code>padding</code> 歸零，改由 <code>@page margin</code> 負責。 - 字型沿用 Noto Serif TC / Noto Sans TC（Google Fonts CDN），與 theater 一致。</p>
+<h2><a href="#error-handling" id="error-handling"></a>Error Handling</h2>
+<p>輸入全部是 <code>&lt;select&gt;</code> 與 <code>radio</code>，使用者無法輸入非法值，因此沒有錯誤路徑。<code>from &gt; to</code> 靜默對調。這與 <code>theater</code> 的做法一致。</p>
+<h2><a href="#不做的事-yagni" id="不做的事-yagni"></a>不做的事 (YAGNI)</h2>
+<ul>
+<li>不做答案卷（已確認不需要）</li>
+<li>不做每頁題數設定（固定 12）</li>
+<li>不做 localStorage 記憶設定</li>
+<li>不做加減除法</li>
+<li>不做 query string 分享連結</li>
+</ul>
+<h2><a href="#驗收清單" id="驗收清單"></a>驗收清單</h2>
+<p>無測試框架，以手動驗收為準：</p>
+<ol>
+<li>從 2 到 2 → 9 題、1 頁，全部是 2 × b。</li>
+<li>從 2 到 4 → 27 題、3 頁，分頁為 12 / 12 / 3，題號 1–27 連續。</li>
+<li>從 9 到 9 → 9 題、1 頁。</li>
+<li>從 9 到 2（起大於迄）→ 與從 2 到 9 相同結果。</li>
+<li>隨機模式按兩次「重新產生」→ 題序不同。</li>
+<li>順排模式按「重新產生」→ 題序相同，填空位置有變。</li>
+<li>兩種填空形式都出現，且 <code>a × ▢ = a*b</code> 的答案數字正確。</li>
+<li>瀏覽器列印預覽：不含控制列、每張 A4 不溢出、不多出空白頁。</li>
+</ol>
