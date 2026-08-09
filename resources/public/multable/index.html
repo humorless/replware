@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乘法練習題產生器</title>
+<link rel="stylesheet" href="multable.css">
+</head>
+<body>
+
+<div class="controls" id="controls">
+  <h1>乘法練習題產生器</h1>
+
+  <div class="control-row">
+    <label class="field">
+      <span class="field-label">乘法範圍</span>
+      <span class="field-body">
+        從 <select id="from"></select>
+        到 <select id="to"></select>
+      </span>
+    </label>
+
+    <div class="field">
+      <span class="field-label">題目順序</span>
+      <span class="field-body">
+        <label class="radio"><input type="radio" name="order" value="seq" checked> 順排</label>
+        <label class="radio"><input type="radio" name="order" value="rand"> 隨機</label>
+      </span>
+    </div>
+
+    <div class="field">
+      <span class="field-label">&nbsp;</span>
+      <span class="field-body">
+        <button id="regen" type="button">重新產生</button>
+        <button id="print" type="button" class="primary">列印</button>
+      </span>
+    </div>
+  </div>
+
+  <p class="hint" id="hint"></p>
+</div>
+
+<div id="sheets"></div>
+
+<script src="multable.js"></script>
+</body>
+</html>
