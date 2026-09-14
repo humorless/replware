@@ -1,3 +1,7 @@
+The site is plain static HTML in `resources/public/` (`index.html`, `en/`, `assets/`).
+There is no page generation; `boot build-prod` just copies `resources/public` to `target/public`,
+and pushing `boot-code` deploys it to `master` via `.github/workflows/deploy.yml`.
+
 # How to test
 
 ```
