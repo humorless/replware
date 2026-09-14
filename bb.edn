@@ -1,0 +1,6 @@
+{:deps {org.babashka/http-server {:mvn/version "0.1.13"}}
+ :tasks
+ {serve {:doc "Preview the site at http://localhost:8000"
+         :requires ([babashka.http-server :as server])
+         :task (do (server/exec {:port 8000 :dir "resources/public"})
+                   (deref (promise)))}}}
