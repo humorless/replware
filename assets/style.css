@@ -552,3 +552,4 @@ h1,h2,h3{
   padding-top:28px;
   border-top:1px solid var(--line-soft);
 }
+.article .nw{white-space:nowrap;}
