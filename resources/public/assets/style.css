@@ -586,3 +586,14 @@ h1,h2,h3{
 @media (max-width:420px){
   .footer-grid{grid-template-columns:1fr;}
 }
+
+/* English footer: longer labels never fit five columns in one row, so it
+   always uses the grid layout (company block on its own row) */
+body.en .footer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));}
+body.en .footer-grid > div:first-child{grid-column:1 / -1;}
+@media (max-width:720px){
+  body.en .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:420px){
+  body.en .footer-grid{grid-template-columns:1fr;}
+}
