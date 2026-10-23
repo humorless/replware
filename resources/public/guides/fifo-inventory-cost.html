@@ -134,7 +134,7 @@
         </tbody>
       </table>
     </div>
-    <p>以下 SQL 在 DuckDB 測試過，算出的就是上表的結果。<code>stock_moves</code> 每列是一筆進貨（<code>in</code>）或出庫（<code>out</code>）：</p>
+    <p>以下 SQL 改寫自《從試算表到資料平台》第十章的範例，在 DuckDB 測試過，算出的就是上表的結果。<code>stock_moves</code> 每列是一筆進貨（<code>in</code>）或出庫（<code>out</code>）：</p>
     <pre><code>-- stock_moves: one row per receipt (&#x27;in&#x27;) or issue (&#x27;out&#x27;) of an item
 WITH receipts AS (            -- running totals of quantity and cost received
   SELECT item,
