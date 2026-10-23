@@ -16,6 +16,7 @@
 - [每次預算改版，都要比對兩份 Excel 的差異，能不能自動產生差異清單？](https://replware.dev/guides/excel-diff.html)：只比一次用公式或 vlookup 就夠；每次預算改版、每季和實際數字比較都要再比一次，就適合在資料庫裡自動產生差異清單。
 - [數據中台是什麼？中型企業需要建數據中台嗎？](https://replware.dev/guides/data-middle-office.html)：數據中台（也寫作資料中台）是一種組織分工，負責整合全公司的資料、提供給內部各部門使用，不是一套軟體。中型企業一位專責的人加上 Modern Data Stack 這類工具，就能做到同樣的事。
 - [存貨成本先進先出法（FIFO），可以用 SQL 在資料倉儲算嗎？](https://replware.dev/guides/fifo-inventory-cost.html)：可以用 SQL 的 window function 在資料倉儲裡計算。頁面附可執行的 SQL（DuckDB 測試過）與計算範例。
+- [資料治理是什麼？中型企業要從哪裡開始？](https://replware.dev/guides/data-governance.html)：治理是回饋迴路的補集。能用自動檢查及早發現問題的地方，就不必靠規定；規定只該留在迴路失效的地方：太慢、太貴，或第一次就不能發生。
 
 ## 參考
 
