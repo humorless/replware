@@ -13,6 +13,7 @@
 ## 問題解答
 
 - [每個月花最多時間整理的那份 Excel，能不能自動化？](https://replware.dev/guides/excel-automation.html)：每月重做的 Excel 報表多半能自動化。判斷條件：已經有人用 Excel 做出第一版，而且每個月或每一季都要重做。
+- [每次預算改版，都要比對兩份 Excel 的差異，能不能自動產生差異清單？](https://replware.dev/guides/excel-diff.html)：只比一次用公式或 vlookup 就夠；每次預算改版、每季和實際數字比較都要再比一次，就適合在資料庫裡自動產生差異清單。
 
 ## 參考
 
