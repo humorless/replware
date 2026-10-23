@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>每個月花最多時間整理的那份 Excel，怎麼判斷它是不是資料工程問題？｜睿博資訊 REPLWARE</title>
-<meta name="description" content="已經有人用 Excel 做出第一版、而且每個月或每一季都要重做的工作，多半是資料工程問題：計算規則已經寫在 Excel 裡，缺的是一條每期可以自動重跑的資料管線。">
+<title>每個月花最多時間整理的那份 Excel，能不能自動化？｜睿博資訊 REPLWARE</title>
+<meta name="description" content="能。已經有人用 Excel 做出第一版、而且每個月或每一季都要重做的工作，適合做成每期自動重跑的流程：計算規則已經寫在 Excel 裡，缺的是讓電腦每期自動執行。">
 <link rel="shortcut icon" href="../assets/logo/favicon.ico" type="image/x-icon">
-<link rel="canonical" href="https://replware.dev/guides/excel-data-engineering.html">
+<link rel="canonical" href="https://replware.dev/guides/excel-automation.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="睿博資訊 REPLWARE">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:url" content="https://replware.dev/guides/excel-data-engineering.html">
-<meta property="og:title" content="每個月花最多時間整理的那份 Excel，怎麼判斷它是不是資料工程問題？">
-<meta property="og:description" content="已經有人用 Excel 做出第一版、而且每個月或每一季都要重做的工作，多半是資料工程問題：計算規則已經寫在 Excel 裡，缺的是一條每期可以自動重跑的資料管線。">
+<meta property="og:url" content="https://replware.dev/guides/excel-automation.html">
+<meta property="og:title" content="每個月花最多時間整理的那份 Excel，能不能自動化？">
+<meta property="og:description" content="能。已經有人用 Excel 做出第一版、而且每個月或每一季都要重做的工作，適合做成每期自動重跑的流程：計算規則已經寫在 Excel 裡，缺的是讓電腦每期自動執行。">
 <meta property="og:image" content="https://replware.dev/assets/images/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <!-- Noto Serif TC is subset to heading characters only (text=). After changing any h1/h2/h3 text, run `bb font-url`. -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap&text=%20%21%22%23%24%25%26%27%28%29%2A%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~%E4%B8%80%E4%B8%8D%E4%BA%8C%E4%BB%80%E4%BB%BD%E4%BC%B8%E5%80%8B%E5%81%9A%E5%88%A4%E5%93%AA%E5%95%8F%E5%9C%A8%E5%9E%8B%E5%A4%9A%E5%A7%8B%E5%AE%83%E5%B7%A5%E5%B7%B2%E5%B8%B8%E5%BB%B6%E5%BE%9E%E6%80%8E%E6%83%85%E6%8A%80%E6%95%B4%E6%96%99%E6%96%B7%E6%98%AF%E6%99%82%E6%9C%80%E6%9C%83%E6%9C%88%E6%9C%89%E6%9C%9F%E6%9E%B6%E6%A7%8B%E6%AF%8F%E6%B3%81%E6%BA%96%E7%82%BA%E7%89%88%E7%90%86%E7%9A%84%E7%A8%8B%E7%AC%AC%E7%AE%A1%E7%B6%93%E8%88%87%E8%8A%B1%E8%90%BD%E8%A1%93%E8%A6%81%E8%A6%8B%E8%A8%88%E8%AE%80%E8%B3%87%E9%80%B1%E9%81%B8%E9%82%A3%E9%83%BD%E9%87%8D%E9%96%8B%E9%96%93%E9%96%B1%E9%A1%8C%E9%BA%BC%EF%BC%8C%EF%BC%9A%EF%BC%9F">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap&text=%20%21%22%23%24%25%26%27%28%29%2A%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~%E4%B8%80%E4%B8%8D%E4%BA%8C%E4%BA%BA%E4%BB%80%E4%BB%B6%E4%BB%BD%E4%BC%B8%E4%BE%86%E5%80%8B%E5%81%9A%E5%87%BA%E5%8B%95%E5%8C%96%E5%93%AA%E5%9C%A8%E5%9E%8B%E5%A4%9A%E5%A7%8B%E5%B7%B2%E5%B8%B8%E5%BB%B6%E5%BE%9E%E6%83%85%E6%8A%80%E6%95%B4%E6%99%82%E6%9C%80%E6%9C%83%E6%9C%88%E6%9C%89%E6%9E%B6%E6%A2%9D%E6%A7%8B%E6%AF%8F%E6%B3%81%E7%82%BA%E7%90%86%E7%94%A8%E7%9A%84%E7%AE%A1%E7%B6%93%E8%83%BD%E8%87%AA%E8%88%87%E8%8A%B1%E8%90%BD%E8%A1%93%E8%A6%81%E8%A6%8B%E8%A8%88%E8%AE%80%E9%81%B8%E9%82%A3%E9%83%BD%E9%87%8D%E9%96%8B%E9%96%93%E9%96%B1%E9%BA%BC%EF%BC%8C%EF%BC%9A%EF%BC%9F">
 <link rel="stylesheet" href="../assets/style.css">
 <script type="application/ld+json">
 {
@@ -29,9 +29,9 @@
  "@graph": [
   {
    "@type": "Article",
-   "@id": "https://replware.dev/guides/excel-data-engineering.html#article",
-   "headline": "每個月花最多時間整理的那份 Excel，怎麼判斷它是不是資料工程問題？",
-   "description": "已經有人用 Excel 做出第一版、而且每個月或每一季都要重做的工作，多半是資料工程問題：計算規則已經寫在 Excel 裡，缺的是一條每期可以自動重跑的資料管線。",
+   "@id": "https://replware.dev/guides/excel-automation.html#article",
+   "headline": "每個月花最多時間整理的那份 Excel，能不能自動化？",
+   "description": "能。已經有人用 Excel 做出第一版、而且每個月或每一季都要重做的工作，適合做成每期自動重跑的流程：計算規則已經寫在 Excel 裡，缺的是讓電腦每期自動執行。",
    "inLanguage": "zh-Hant",
    "datePublished": "2026-10-23",
    "dateModified": "2026-10-23",
@@ -44,7 +44,7 @@
    },
    "publisher": {"@id": "https://replware.dev/#org"},
    "isPartOf": {"@id": "https://replware.dev/#website"},
-   "mainEntityOfPage": "https://replware.dev/guides/excel-data-engineering.html",
+   "mainEntityOfPage": "https://replware.dev/guides/excel-automation.html",
    "image": "https://replware.dev/assets/images/og-cover.jpg",
    "about": ["管理會計", "資料工程", "Excel 報表自動化", "預實分析", "資料管線"],
    "mentions": [{"@id": "https://replware.dev/#book"}],
@@ -54,7 +54,7 @@
    "@type": "BreadcrumbList",
    "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "睿博資訊 REPLWARE", "item": "https://replware.dev/"},
-    {"@type": "ListItem", "position": 2, "name": "每個月花最多時間整理的那份 Excel，怎麼判斷它是不是資料工程問題？", "item": "https://replware.dev/guides/excel-data-engineering.html"}
+    {"@type": "ListItem", "position": 2, "name": "每個月花最多時間整理的那份 Excel，能不能自動化？", "item": "https://replware.dev/guides/excel-automation.html"}
    ]
   }
  ]
@@ -90,12 +90,12 @@
 
     <nav class="crumb" aria-label="麵包屑"><a href="../index.html">首頁</a> › 問題解答</nav>
 
-    <h1>每個月花最多時間整理的那份 Excel，怎麼判斷它是不是資料工程問題？</h1>
+    <h1>每個月花最多時間整理的那份 Excel，<br>能不能自動化？</h1>
     <p class="byline">陳家宏（Laurence Chen）｜睿博資訊創辦人｜最後更新 <time datetime="2026-10-23">2026-10-23</time></p>
 
     <p class="lede">
-      先問兩個問題：這件事是不是已經有人用 Excel 做出第一版？它是不是每個月、每一季都要重做一次？
-      兩個答案都是「是」，它多半是資料工程問題。計算規則已經寫在 Excel 裡，缺的是一條每期可以自動重跑的資料管線。
+      能。先問兩個問題：這件事是不是已經有人用 Excel 做出第一版？它是不是每個月、每一季都要重做一次？
+      兩個答案都是「是」，就適合做成每期自動重跑的流程：計算規則已經寫在 Excel 裡，缺的是讓電腦每期自動執行。
     </p>
 
     <p class="eyebrow">給財務與營運主管</p>
@@ -109,29 +109,29 @@
       <li>業務部和財務部的營收數字對不起來，因為兩邊各自抽資料、套公式。</li>
     </ul>
 
-    <h2>判準一：已經有 Excel 第一版</h2>
+    <h2>條件一：已經有人用 Excel 做出來</h2>
     <p>
-      同一本書第十章的啟發法：凡是已經先被 Excel 做出第一版解決方案的問題，都很有可能是資料工程的問題。
+      同一本書第十章的經驗法則：凡是已經先被 Excel 做出第一版解決方案的問題，都很有可能是資料工程的問題，也就是可以交給電腦自動執行。
       判斷時先問一句：「你們現在是怎麼做的？」對方拿出一份 Excel，就符合這個條件。
     </p>
     <p>
-      書中的例子：一位客戶用 Excel 算先進先出法（FIFO）的存貨成本，工程師寫了 500 多行程式還沒完成；改在資料庫用 SQL 實作，約 50 行，每一步的中間結果都能像 Excel 一樣檢查。
+      書中的例子：一位客戶用 Excel 算先進先出法（FIFO）的存貨成本，工程師寫了 500 多行程式還沒完成；改在資料庫用 SQL 實作，約 50 行，每一步都能像 Excel 一樣檢查。
     </p>
 
-    <h2>判準二：每個週期都要重做</h2>
+    <h2>條件二：每個月都要重做</h2>
     <p>
-      資料分析常是一次性的，報告交出去就結束。管理會計不一樣：預算改好幾輪，每輪依公司自訂的維度彙總，每季再和實際數字比一次（預實分析）。
-      同樣的比對做到第十二次，就該做成資料管線。
+      資料分析常是一次性的，報告交出去就結束。預算、成本控管、預實分析這類給主管做決策用的內部報表不一樣，在會計上叫「管理會計」：
+      預算改好幾輪，每輪依公司自訂的分類彙總，每季再和實際數字比一次。同樣的比對做到第十二次，就該自動化。
     </p>
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>管理會計的特性</th><th>在 Excel 裡</th><th>做成資料管線之後</th></tr>
+          <tr><th>管理會計的特性</th><th>在 Excel 裡</th><th>自動化之後</th></tr>
         </thead>
         <tbody>
           <tr><td>同一份數字有多個版本</td><td>初版預估、控管後的預估各一份 Excel，靠人工逐格比對</td><td>在資料庫裡做版本比對，直接產出差異清單</td></tr>
-          <tr><td>維度由公司自己定義</td><td>每一輪都要依四層維度重新彙總</td><td>維度建模，階層彙總在資料庫裡完成</td></tr>
-          <tr><td>每個週期都要重做</td><td>每季再跟實際數字手工比一次</td><td>可重跑的資料管線，新一期進來就重跑</td></tr>
+          <tr><td>分類由公司自己定義</td><td>每一輪都要依四層分類重新彙總</td><td>依部門、層級自動加總</td></tr>
+          <tr><td>每個週期都要重做</td><td>每季再跟實際數字手工比一次</td><td>新一期資料進來就自動重跑</td></tr>
         </tbody>
       </table>
     </div>
@@ -139,16 +139,16 @@
     <h2>為什麼常落在管理會計</h2>
     <p>
       財務會計對外，格式由會計準則規範，大部分工作 ERP 已經處理。管理會計對內，看哪些數字、怎麼切，每家公司都不同，ERP 管不到的部分多半留在 Excel 裡。
-      所以企業裡最大量的資料工程需求，常在財務部、業務部每月整理的 Excel 裡，不在資料分析專案裡。
+      所以企業裡最大量的自動化需求，常在財務部、業務部每月整理的 Excel 裡。
     </p>
     <p>
-      睿博做的是資料工程這一段：把貴公司既有的計算邏輯搬進資料平台、每期自動重跑。
+      睿博負責把貴公司既有的計算邏輯搬進資料平台、每期自動重跑。
     </p>
 
     <h2>從哪一份 Excel 開始</h2>
     <p>
       去財務部、業務部問：「每個月花你們最多時間整理的那份 Excel，是哪一份？」找到後再問：「這份表拿到之後要做什麼？」
-      使用者要的常是樞紐好的寬表，實際需要的常是下一步，例如一份差異清單。資料平台可以直接產出那一步。
+      使用者要的常是一張樞紐分析表，實際需要的常是下一步，例如一份差異清單。資料平台可以直接產出那一步。
     </p>
 
     <section class="for-it">
@@ -171,7 +171,7 @@
     </ul>
 
     <div class="article-cta">
-      <p>想確認貴公司的那份 Excel 適不適合做成資料管線，歡迎直接來信。</p>
+      <p>想確認貴公司的那份 Excel 適不適合自動化，歡迎直接來信。</p>
       <a class="btn btn-primary" href="mailto:laurence@replware.dev?subject=%E8%B3%87%E6%96%99%E5%B9%B3%E5%8F%B0%E5%B0%8E%E5%85%A5%E8%A9%A2%E5%95%8F&amp;body=%E5%85%AC%E5%8F%B8%E5%90%8D%E7%A8%B1%EF%BC%9A%0A%E8%81%AF%E7%B5%A1%E4%BA%BA%EF%BC%9A%0A%E7%9B%AE%E5%89%8D%E7%9A%84%E8%B3%87%E6%96%99%E5%95%8F%E9%A1%8C%EF%BC%9A%0A">來信談談你的資料問題</a>
     </div>
 
