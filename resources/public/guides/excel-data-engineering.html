@@ -159,7 +159,7 @@
         <li><b>寬表轉長表</b>：每年或每月一欄的寬表先 UNPIVOT 成每格一列才能 JOIN；版本比對是兩張長表 FULL OUTER JOIN 後算差額。</li>
         <li><b>資料轉換</b>：dbt 把 Excel 的計算步驟改寫成一層層 SQL view，即書中的「函數式資料轉換」，每層中間結果都可查詢。</li>
         <li><b>運算放在資料端</b>：用 SQL 在資料倉儲內計算，不把資料搬進應用程式。上述 FIFO 用 window function 實作。</li>
-        <li><b>排程與呈現</b>：Kestra 排程每期重跑，Metabase 產出報表。</li>
+        <li><b>排程與呈現</b>：每期重跑用 cron 排程即可，工作之間有依賴關係、排程變複雜時再用 Kestra；Metabase 產出報表。</li>
       </ul>
     </section>
 
