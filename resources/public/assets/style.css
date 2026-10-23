@@ -553,3 +553,22 @@ h1,h2,h3{
   border-top:1px solid var(--line-soft);
 }
 .article .nw{white-space:nowrap;}
+.article ol{margin:0 0 16px;padding-left:1.4em;}
+.article p code,.article li code{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.88em;
+  background:var(--paper-2);
+  padding:1px 5px;
+  border-radius:3px;
+}
+.article pre{
+  margin:6px 0 20px;
+  padding:16px 18px;
+  background:var(--paper-3);
+  color:var(--on-dark);
+  border-radius:4px;
+  overflow-x:auto;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12.5px;
+  line-height:1.6;
+}
