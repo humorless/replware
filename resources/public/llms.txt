@@ -1,0 +1,22 @@
+# 睿博資訊 REPLWARE
+
+> 睿博資訊有限公司（REPLWARE，2020 年成立，統一編號 83540524）以開源技術為台灣的中大型企業建置 Modern Data Stack 資料平台，部署在企業自有機房、雲端或雲地混合環境，並把架構與實作方法交給企業自己的工程師。創辦人陳家宏（Laurence Chen）著有《從試算表到資料平台》。
+
+## 服務
+
+- [資料平台建置（Modern Data Stack）](https://replware.dev/#services)：整合 ERP、MES、CRM 與各部門 Excel 的資料，建立資料模型與自動化排程。技術：ClickHouse、dbt、Metabase、Kestra、Meltano。
+- [開源部署：地端、雲端、雲地混合](https://replware.dev/#services)：不綁廠商、不按人頭計價。
+- [工程師培力與知識移轉](https://replware.dev/#services)：與貴公司指派的工程師共同開發。
+- [合作方式](https://replware.dev/#process)：深度訪談、提案與規劃、建置與駐點陪跑（約 3 個月，每週 1 天駐點）、驗收與交棒。
+- [客戶成果](https://replware.dev/#results)：凌巨科技報表產出從 27 分鐘縮短到 10 秒以內，報表開發速度 3 倍，約 3 個月完成建置。
+
+## 參考
+
+- [《從試算表到資料平台》官方網站](https://mds-book.replware.dev/)
+- [睿博洞察（Substack）](https://replware.substack.com/)
+- [English](https://replware.dev/en/)
+
+## 聯絡
+
+- Email：laurence@replware.dev
+- 地址：臺北市文山區景興路 193 號
