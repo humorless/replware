@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <!-- Noto Serif TC is subset to heading characters only (text=). After changing any h1/h2/h3 text, run `bb font-url`. -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap&text=%20%21%22%23%24%25%26%27%28%29%2A%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~%E4%B8%80%E4%B8%8D%E4%BA%8C%E4%BA%BA%E4%BB%80%E4%BB%B6%E4%BB%BD%E4%BC%B8%E4%BE%86%E5%80%8B%E5%81%9A%E5%87%BA%E5%8B%95%E5%8C%96%E5%93%AA%E5%9C%A8%E5%9E%8B%E5%A4%9A%E5%A7%8B%E5%B7%B2%E5%B8%B8%E5%BB%B6%E5%BE%9E%E6%83%85%E6%8A%80%E6%95%B4%E6%99%82%E6%9C%80%E6%9C%83%E6%9C%88%E6%9C%89%E6%9E%B6%E6%A2%9D%E6%A7%8B%E6%AF%8F%E6%B3%81%E7%82%BA%E7%90%86%E7%94%A8%E7%9A%84%E7%AE%A1%E7%B6%93%E8%83%BD%E8%87%AA%E8%88%87%E8%8A%B1%E8%90%BD%E8%A1%93%E8%A6%81%E8%A6%8B%E8%A8%88%E8%AE%80%E9%81%B8%E9%82%A3%E9%83%BD%E9%87%8D%E9%96%8B%E9%96%93%E9%96%B1%E9%BA%BC%EF%BC%8C%EF%BC%9A%EF%BC%9F">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap&text=%20%21%22%23%24%25%26%27%28%29%2A%2B%2C-.%2F0123456789%3A%3B%3C%3D%3E%3F%40ABCDEFGHIJKLMNOPQRSTUVWXYZ%5B%5C%5D%5E_%60abcdefghijklmnopqrstuvwxyz%7B%7C%7D~%E4%B8%80%E4%B8%8D%E4%BA%8C%E4%BA%BA%E4%BB%80%E4%BB%B6%E4%BB%BD%E4%BC%B8%E4%BE%86%E5%80%8B%E5%81%9A%E5%87%BA%E5%8B%95%E5%8C%96%E5%9C%A8%E5%A4%9A%E5%B7%B2%E5%B8%B8%E5%BB%B6%E6%83%85%E6%95%B4%E6%99%82%E6%9C%80%E6%9C%83%E6%9C%88%E6%9C%89%E6%A2%9D%E6%AF%8F%E6%B3%81%E7%82%BA%E7%90%86%E7%94%A8%E7%9A%84%E7%AE%A1%E7%B6%93%E8%83%BD%E8%87%AA%E8%8A%B1%E8%90%BD%E8%A6%81%E8%A6%8B%E8%A8%88%E8%AE%80%E9%82%A3%E9%83%BD%E9%87%8D%E9%96%93%E9%96%B1%E9%BA%BC%EF%BC%8C%EF%BC%9A%EF%BC%9F">
 <link rel="stylesheet" href="../assets/style.css">
 <script type="application/ld+json">
 {
@@ -46,7 +46,7 @@
    "isPartOf": {"@id": "https://replware.dev/#website"},
    "mainEntityOfPage": "https://replware.dev/guides/excel-automation.html",
    "image": "https://replware.dev/assets/images/og-cover.jpg",
-   "about": ["管理會計", "資料工程", "Excel 報表自動化", "預實分析", "資料管線"],
+   "about": ["管理會計", "Excel 報表自動化", "預實分析", "資料工程"],
    "mentions": [{"@id": "https://replware.dev/#book"}],
    "citation": "https://replware.substack.com/p/excel"
   },
@@ -98,8 +98,6 @@
       兩個答案都是「是」，就適合做成每期自動重跑的流程，因為計算規則已經寫在 Excel 裡了。
     </p>
 
-    <p class="eyebrow">給財務與營運主管</p>
-
     <h2>常見的情況</h2>
     <p>月結前那幾天，總有一份 Excel 要花掉好幾個人的時間：</p>
     <ul>
@@ -130,7 +128,7 @@
         </thead>
         <tbody>
           <tr><td>同一份數字有多個版本</td><td>初版預估、控管後的預估各一份 Excel，靠人工逐格比對</td><td>在資料庫裡做版本比對，直接產出差異清單</td></tr>
-          <tr><td>分類由公司自己定義</td><td>每一輪都要依四層分類重新彙總</td><td>依部門、層級自動加總</td></tr>
+          <tr><td>分類由公司自己定義</td><td>每一輪都要依自訂分類手動彙總</td><td>自動加總</td></tr>
           <tr><td>每個週期都要重做</td><td>每季再跟實際數字手工比一次</td><td>新一期資料進來就自動重跑</td></tr>
         </tbody>
       </table>
@@ -145,28 +143,10 @@
       睿博負責把貴公司既有的計算邏輯搬進資料平台、每期自動重跑。
     </p>
 
-    <h2>從哪一份 Excel 開始</h2>
-    <p>
-      去財務部、業務部問：「每個月花你們最多時間整理的那份 Excel，是哪一份？」找到後再問：「這份表拿到之後要做什麼？」
-      使用者要的常是一張樞紐分析表，實際需要的常是下一步，例如一份差異清單。資料平台可以直接產出那一步。
-    </p>
-
-    <section class="for-it">
-      <p class="eyebrow">給 IT 的技術說明</p>
-      <h2>架構與技術選型</h2>
-      <ul>
-        <li><b>抽取與載入</b>：Meltano 把 ERP、營運資料庫與上傳的 Excel 載入資料倉儲（ClickHouse）。</li>
-        <li><b>寬表轉長表</b>：每年或每月一欄的寬表先 UNPIVOT 成每格一列才能 JOIN；版本比對是兩張長表 FULL OUTER JOIN 後算差額。</li>
-        <li><b>資料轉換</b>：dbt 把 Excel 的計算步驟改寫成一層層 SQL view（函數式資料轉換），每層中間結果都可查詢。</li>
-        <li><b>運算放在資料端</b>：用 SQL 在資料倉儲內計算，不把資料搬進應用程式。FIFO 存貨成本這類計算可用 window function 實作。</li>
-        <li><b>排程與呈現</b>：每期重跑用 cron 排程即可，工作之間有依賴關係、排程變複雜時再用 Kestra；Metabase 產出報表。</li>
-      </ul>
-    </section>
-
     <h2>延伸閱讀</h2>
     <ul>
       <li><a href="https://replware.substack.com/p/excel">〈一道 Excel 題的兩個領悟〉</a>（睿博洞察）</li>
-      <li><a href="https://mds-book.replware.dev/">《從試算表到資料平台：重構資料工程的技術與團隊》</a>第一、二、十章</li>
+      <li><a href="https://mds-book.replware.dev/">《從試算表到資料平台：重構資料工程的技術與團隊》</a>第一、十章</li>
       <li><a href="../index.html#services">睿博的服務</a>與<a href="../index.html#process">合作方式</a></li>
     </ul>
 
