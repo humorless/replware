@@ -5,4 +5,6 @@
          :task (do (server/exec {:port 8000 :dir "resources/public"})
                    (deref (promise)))}
   font-url {:doc "Regenerate the Noto Serif TC subset URL after changing h1/h2/h3 text"
-            :task (load-file "scripts/font_url.clj")}}}
+            :task (load-file "scripts/font_url.clj")}
+  sync-footer {:doc "Copy the homepage footer into every guides/ page"
+               :task (load-file "scripts/sync_footer.clj")}}}
